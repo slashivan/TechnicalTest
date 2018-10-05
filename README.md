@@ -20,6 +20,8 @@ As part of this process however, you should look to refactor some of the code in
 * You may add unit/integration tests using a test framework (and/or mocking framework) of your choice
 * You may edit this README.md if you want to give more details around your work (e.g. why you have done something a particular way, or anything else you would look to do but didn't have time)
 
-Once you have completed your work, send us a link to your public repository.
+Once you have completed your work, send us a link to your public repository at pete@venturefounders.co.uk
+
+Let us know if you have any questions or problems.
 
 Good luck!
