@@ -18,6 +18,19 @@ namespace TechnicalTest.App.Features
         public void Execute(Guid fromAccountId, decimal amount)
         {
             // TODO:
+            var fromAccount = this.accountRepository.GetAccountById(fromAccountId);
+
+            fromAccount.SufficientBalance(amount);
+
+            if (fromAccount.LowFunds())
+            {
+                this.notificationService.NotifyFundsLow(fromAccount.User.Email);
+            }
+           
+            fromAccount.Balance =- amount;
+            fromAccount.Withdrawn = -amount;
+
+            this.accountRepository.Update(fromAccount);
         }
     }
 }
