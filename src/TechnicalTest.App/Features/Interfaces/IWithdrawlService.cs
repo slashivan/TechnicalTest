@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TechnicalTest.App.Domain.Services
+namespace TechnicalTest.App.Features.Interfaces
 {
     public interface IWithdrawlService
     {

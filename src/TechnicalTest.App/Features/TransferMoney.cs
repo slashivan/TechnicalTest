@@ -1,6 +1,7 @@
 ﻿using TechnicalTest.App.DataAccess;
 using TechnicalTest.App.Domain.Services;
 using System;
+using TechnicalTest.App.Features.Interfaces;
 
 namespace TechnicalTest.App.Features
 {
