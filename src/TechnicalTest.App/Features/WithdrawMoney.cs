@@ -4,7 +4,7 @@ using System;
 
 namespace TechnicalTest.App.Features
 {
-    public class WithdrawMoney
+    public class WithdrawMoney : IWithdrawlService
     {
         private IAccountRepository accountRepository;
         private INotificationService notificationService;
@@ -28,7 +28,7 @@ namespace TechnicalTest.App.Features
             }
            
             fromAccount.Balance =- amount;
-            fromAccount.Withdrawn = -amount;
+            fromAccount.Withdrawn =- amount;
 
             this.accountRepository.Update(fromAccount);
         }

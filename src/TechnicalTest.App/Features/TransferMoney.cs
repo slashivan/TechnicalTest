@@ -8,19 +8,20 @@ namespace TechnicalTest.App.Features
     {
         private IAccountRepository accountRepository;
         private INotificationService notificationService;
+        private IWithdrawlService withDrawMoneyService;
 
-        public TransferMoney(IAccountRepository accountRepository, INotificationService notificationService)
+        public TransferMoney(IAccountRepository accountRepository, INotificationService notificationService, IWithdrawlService withDrawMoneyService)
         {
             this.accountRepository = accountRepository;
             this.notificationService = notificationService;
+            this.withDrawMoneyService = withDrawMoneyService;
         }
 
         public void Execute(Guid fromAccountId, Guid toAccountId, decimal amount)
         {
             var toAccount = this.accountRepository.GetAccountById(toAccountId);
 
-            WithdrawMoney moneyWithdraw = new WithdrawMoney(accountRepository, notificationService);
-            moneyWithdraw.Execute(fromAccountId, amount);
+            withDrawMoneyService.Execute(fromAccountId, amount);
 
             toAccount.TransactionLessThenPayLimit(amount);
 
